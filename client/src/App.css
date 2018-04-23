@@ -1,0 +1,159 @@
+#login,
+#signup {
+  margin-top: 36px;
+}
+
+form .alert {
+  margin-top: 12px;
+}
+
+#login-form,
+#signup-form {
+  margin-bottom: 12px;
+}
+
+#dashboard {
+  margin-top: 42px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.warning {
+  background: red;
+  color: white;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.link-icon {
+  float: right;
+  background-color: transparent;
+  border: none;
+  color: #41e031;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-right: 12px;
+}
+
+.link-icon:hover {
+  color: #22a814;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.centered {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-top {
+  margin: 18px 12px;
+}
+
+.chat-page {
+  width: inherit;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  width: inherit;
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding: 12px;
+}
+
+.chat-input-form {
+  width: inherit;
+  flex-basis: 80px;
+  padding: 0 12px;
+}
+
+@media (min-width: 576px) {
+  .chat-messages {
+    overflow-y: hidden;
+  }
+
+  .chat-messages:hover {
+    overflow-y: auto;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.message {
+  padding: 0 12px 0;
+}
+
+.message p {
+  padding: 0;
+  margin: 0;
+}
+
+.message hr {
+  margin: 8px 0;
+}
+
+.message-from {
+  font-size: 1.2em;
+}
+
+.message-text {
+  font-size: 0.9em;
+}
+
+.message-time {
+  margin-left: 12px;
+  font-size: 0.65em;
+}

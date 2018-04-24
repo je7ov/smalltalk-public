@@ -30,7 +30,7 @@ class Validator {
     if (username === '') {
       valid = false;
       error = 'All fields must be filled out.';
-    } else if (!username.match(/^[0-9a-zA-Z.]+$/)) {
+    } else if (!username.match(/^[0-9a-zA-Z. ]+$/)) {
       valid = false;
       error = 'Username must be alphanumeric with periods.';
     } else if (

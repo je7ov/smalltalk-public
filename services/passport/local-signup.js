@@ -42,7 +42,7 @@ function validateUsername(username) {
 
     return error;
   }
-  if (!username.match(/^[0-9a-zA-Z.]+$/)) {
+  if (!username.match(/^[0-9a-zA-Z. ]+$/)) {
     const error = new Error('Username is not alphanumeric');
     error.name = errorName;
 

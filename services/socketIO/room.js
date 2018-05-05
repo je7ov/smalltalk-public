@@ -3,6 +3,7 @@ class Rooms {
     this.rooms = [];
   }
 
+  // add user to room with id and name
   /** @param {string} id
    *  @param {string} name
    *  @param {string} room
@@ -28,6 +29,7 @@ class Rooms {
     return user;
   }
 
+  // remove user with id
   /** @param {string} id */
   removeUser(id) {
     let user;
@@ -46,16 +48,19 @@ class Rooms {
     return user;
   }
 
+  // get user with id
   /** @param {string} id */
   getUser(id) {
     return this._getUserByProp('id', id);
   }
 
+  // get user with name
   /** @param {string} name */
   getUserByName(name) {
     return this._getUserByProp('name', name, true);
   }
 
+  // get all the users in a room
   /** @param {string} name */
   getUsers(room) {
     room = room.toLowerCase();
@@ -70,6 +75,7 @@ class Rooms {
     return users;
   }
 
+  // get user with a specific prop
   /** @param {string} propName
    *  @param {string} prop
    *  @param {boolean} toLowerCase
@@ -95,6 +101,7 @@ class Rooms {
     return user;
   }
 
+  // check if room is empty and remove from room array if sos
   /** @param {number} roomIndex */
   _cleanupRoom(roomIndex) {
     if (this.rooms[roomIndex].users.length === 0)

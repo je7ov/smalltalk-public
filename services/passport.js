@@ -14,6 +14,7 @@ passport.deserializeUser((id, done) => {
   User.findById(id).then(user => done(null, user));
 });
 
+// passport google strategy for future use (Google sign in button)
 passport.use(
   new googleStrategy(
     {
@@ -34,18 +35,3 @@ passport.use(
     }
   )
 );
-
-// passport.use(
-//   new localStrategy(async (username, password, done) => {
-//     const user = await User.findOne({ username });
-//     if (!user) {
-//       return done(null, false, { message: 'Incorrect username' });
-//     }
-
-//     if (!user.validPassword(password)) {
-//       return done(null, false, { message: 'Incorrect password' });
-//     }
-
-//     return done(null, user);
-//   })
-// );

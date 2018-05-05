@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// componenet rendering a single message in a chat room
 class Message extends Component {
   render() {
     const { message } = this.props;

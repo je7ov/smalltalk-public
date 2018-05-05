@@ -6,6 +6,7 @@ import * as actions from './actions';
 import './App.css';
 import Auth from './modules/Auth';
 
+// route pages
 import SignupLogin from './routes/SignupLogin';
 import Dashboard from './routes/Dashboard';
 import ChatRoom from './routes/ChatRoom';
@@ -13,9 +14,9 @@ import Invite from './routes/Invite';
 
 class App extends Component {
   render() {
-    // Auth.deauthenticateUser();
     return (
       <div className="App">
+        {/* Root route will reroute to dashboard if user has authentication in cookies */}
         <Route
           exact
           path="/"

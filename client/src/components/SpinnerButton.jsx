@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { PulseLoader } from 'react-spinners';
-import { connect } from 'react-redux';
 import classNames from 'classnames';
 
+// component rendering a button with a loading state
 class SpinnerButton extends Component {
   render() {
     const classList = classNames({
@@ -29,8 +29,4 @@ class SpinnerButton extends Component {
   }
 }
 
-function mapStateToProps({ load }) {
-  return { load };
-}
-
-export default connect(mapStateToProps)(SpinnerButton);
+export default SpinnerButton;

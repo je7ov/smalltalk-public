@@ -201,7 +201,7 @@ class Dashboard extends Component {
         <br />
 
         <div className="row">
-          <div className="col-3 offset-1">
+          <div className="col-sm-3 offset-sm-1">
             <div className="row">
               <div className="col-12">
                 <h2 className="text-center">Friends</h2>
@@ -218,7 +218,7 @@ class Dashboard extends Component {
             </div>
           </div>
 
-          <div className="col-9">
+          <div className="col-sm-8">
             <div className="row">
               <div className="col-sm-8 offset-sm-2">
                 <form>

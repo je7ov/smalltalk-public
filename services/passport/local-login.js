@@ -4,13 +4,13 @@ const PassportLocalStrategy = require('passport-local');
 const keys = require('../../config/keys');
 
 module.exports = new PassportLocalStrategy(async (username, password, done) => {
-  const userData = {
-    username: username.trim(),
-    password: password.trim()
-  };
+  username = username.trim();
+  password = password.trim();
 
-  const user = await User.findOne({ username: username.trim() });
+  // look for user in database with username
+  const user = await User.findOne({ username });
 
+  // it user doesn't exist, return error
   if (!user) {
     const error = new Error('Incorrect username');
     error.name = 'IncorrectUsernameError';
@@ -18,7 +18,9 @@ module.exports = new PassportLocalStrategy(async (username, password, done) => {
     return done(error);
   }
 
-  const valid = await user.checkPassword(password.trim());
+  // confirm password is correct
+  const valid = await user.checkPassword(password);
+  // if password not valid, return error
   if (!valid) {
     const error = new Error('Incorrect password');
     error.name = 'IncorrectPasswordError';
@@ -26,14 +28,17 @@ module.exports = new PassportLocalStrategy(async (username, password, done) => {
     return done(error);
   }
 
+  // create jwt payload
   const payload = {
     sub: user._id
   };
 
+  // create jwt
   const token = jwt.sign(payload, keys.jwtSecret);
   const data = {
     name: user.username
   };
 
+  // return jwt and user data
   return done(null, token, data);
 });

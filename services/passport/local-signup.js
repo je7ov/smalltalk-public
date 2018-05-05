@@ -13,16 +13,19 @@ const passwordConfig = {
 module.exports = new PassportLocalStrategy(async (username, password, done) => {
   username = username.trim();
 
+  // check if username is valid
   const validUsernameError = validateUsername(username);
   if (validUsernameError) {
     return done(validUsernameError);
   }
 
+  // check if password is valid
   const validPasswordError = validatePassword(password);
   if (validPasswordError) {
     return done(validPasswordError);
   }
 
+  // create new user in database
   const user = await new User({
     username,
     usernameLower: username.toLowerCase(),
@@ -34,6 +37,7 @@ module.exports = new PassportLocalStrategy(async (username, password, done) => {
   return done(null);
 });
 
+// check if username follows our username criteria
 function validateUsername(username) {
   const errorName = 'InvalidUsername';
   if (username === '') {
@@ -62,6 +66,7 @@ function validateUsername(username) {
   return null;
 }
 
+// check if password follows our password criteria
 function validatePassword(password) {
   const errorName = 'InvalidPassword';
   if (password === '') {
